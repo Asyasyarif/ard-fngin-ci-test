@@ -9,19 +9,12 @@ Firmngin OTA CI/CD test sketch (Arduino / ESP32).
 
 ## GitHub Actions setup
 
-Repo → **Settings → Secrets and variables → Actions**
-
-### Secrets
+Repo → **Settings → Secrets and variables → Actions → Secrets**
 
 | Name | Value |
 |---|---|
 | `FIRMNGIN_API_TOKEN` | API token from **Integrations** (scope: Firmware OTA) |
 | `FIRMNGIN_KEYS_H` | Full contents of your local `keys.h` file |
-
-### Variables
-
-| Name | Value |
-|---|---|
 | `FIRMNGIN_DEVICE_SECRET_ID` | Device **Secret ID** from the dashboard (same as `DEVICE_ID` in `keys.h`) |
 
 ## Trigger

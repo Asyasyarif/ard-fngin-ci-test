@@ -25,10 +25,17 @@ jobs:
           fi
           printf '%s\n' "$KEYS_H" > ard-ci-test/keys.h
 
+      - name: Validate Firmngin target
+        run: |
+          if [ -z "${{ secrets.FIRMNGIN_DEVICE_SECRET_ID }}" ]; then
+            echo "Missing secret FIRMNGIN_DEVICE_SECRET_ID (device Secret ID from Firmngin dashboard)" >&2
+            exit 1
+          fi
+
       - uses: firmngin/ota@v1.1.3
         with:
           token: ${{ secrets.FIRMNGIN_API_TOKEN }}
-          device-secret-id: ${{ vars.FIRMNGIN_DEVICE_SECRET_ID }}
+          device-secret-id: ${{ secrets.FIRMNGIN_DEVICE_SECRET_ID }}
           platform: arduino
           arduino-fqbn: esp32:esp32:esp32
           arduino-sketch: ard-ci-test
