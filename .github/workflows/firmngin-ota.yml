@@ -38,6 +38,6 @@ jobs:
           device-secret-id: ${{ secrets.FIRMNGIN_DEVICE_SECRET_ID }}
           platform: arduino
           arduino-fqbn: esp32:esp32:esp32
-          arduino-sketch: ard-ci-test
+          arduino-sketch: ard-ci-test.ino
           version: ci-${{ github.run_number }}
           release-notes: ${{ github.event.head_commit.message }}
