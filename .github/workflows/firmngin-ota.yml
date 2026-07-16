@@ -25,7 +25,7 @@ jobs:
           fi
           printf '%s\n' "$KEYS_H" > ard-ci-test/keys.h
 
-      - uses: firmngin/ota@v1.1.1
+      - uses: firmngin/ota@v1.1.2
         with:
           token: ${{ secrets.FIRMNGIN_API_TOKEN }}
           device-secret-id: ${{ vars.FIRMNGIN_DEVICE_SECRET_ID }}
