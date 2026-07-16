@@ -34,7 +34,7 @@ jobs:
           mkdir -p "$HOME/Arduino/libraries"
           git clone --depth 1 https://github.com/firmngin/Firmngin-Arduino.git "$HOME/Arduino/libraries/Firmngin-Arduino"
 
-      - uses: firmngin/ota@v1.1
+      - uses: firmngin/ota@v1.1.1
         with:
           token: ${{ secrets.FIRMNGIN_API_TOKEN }}
           device-secret-id: ${{ vars.FIRMNGIN_DEVICE_SECRET_ID }}
