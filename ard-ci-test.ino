@@ -36,7 +36,7 @@ void setup() {
 #if defined(ESP8266)
   fngin.setFirmwareInfo("1.0.0", "ESP8266", "esp8266:esp8266:generic");
 #elif defined(ESP32)
-  fngin.setFirmwareInfo("3.0.0", "ESP32", "esp32:esp32:esp32");
+  fngin.setFirmwareInfo("3.1.0", "ESP32", "esp32:esp32:esp32");
 #endif
 
   // OTA status callback
@@ -57,7 +57,7 @@ void loop() {
   static unsigned long lastCheck = 0;
   if (millis() - lastCheck > 2000) {
     lastCheck = millis();
-     Serial.println("OK 2 4");
+     Serial.println("OK 2 5");
     // fngin.checkOTA();
   }
 }

@@ -32,7 +32,7 @@ jobs:
             exit 1
           fi
 
-      - uses: firmngin/ota@v1.1.5
+      - uses: firmngin/ota@v1.1.6
         with:
           token: ${{ secrets.FIRMNGIN_API_TOKEN }}
           device-secret-id: ${{ secrets.FIRMNGIN_DEVICE_SECRET_ID }}
