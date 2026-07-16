@@ -4,8 +4,8 @@ Firmngin OTA CI/CD test sketch (Arduino / ESP32).
 
 ## Local setup
 
-1. Copy `keys.h` from **Firmngin dashboard → Devices → your device**.
-2. Open `ard-ci-test.ino` in Arduino IDE and flash.
+1. Copy `keys.h` from **Firmngin dashboard → Devices → your device** into `ard-ci-test/keys.h`.
+2. Open `ard-ci-test/ard-ci-test.ino` in Arduino IDE and flash.
 
 ## GitHub Actions setup
 

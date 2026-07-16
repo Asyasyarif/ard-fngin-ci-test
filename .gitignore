@@ -1,4 +1,5 @@
 keys.h
+ard-ci-test/keys.h
 .DS_Store
 *.bin
 *.elf

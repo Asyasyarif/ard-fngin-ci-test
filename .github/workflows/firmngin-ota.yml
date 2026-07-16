@@ -23,16 +23,7 @@ jobs:
             echo "Missing secret FIRMNGIN_KEYS_H (paste full keys.h from Firmngin dashboard)" >&2
             exit 1
           fi
-          printf '%s\n' "$KEYS_H" > keys.h
-
-      - uses: arduino/setup-arduino-cli@v1
-
-      - name: Install ESP32 core and Firmngin library
-        run: |
-          arduino-cli core update-index
-          arduino-cli core install esp32:esp32
-          mkdir -p "$HOME/Arduino/libraries"
-          git clone --depth 1 https://github.com/firmngin/Firmngin-Arduino.git "$HOME/Arduino/libraries/Firmngin-Arduino"
+          printf '%s\n' "$KEYS_H" > ard-ci-test/keys.h
 
       - uses: firmngin/ota@v1.1.1
         with:
@@ -40,6 +31,6 @@ jobs:
           device-secret-id: ${{ vars.FIRMNGIN_DEVICE_SECRET_ID }}
           platform: arduino
           arduino-fqbn: esp32:esp32:esp32
-          arduino-sketch: ard-ci-test.ino
+          arduino-sketch: ard-ci-test
           version: ci-${{ github.run_number }}
           release-notes: ${{ github.event.head_commit.message }}
