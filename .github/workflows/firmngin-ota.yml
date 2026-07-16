@@ -31,7 +31,8 @@ jobs:
         run: |
           arduino-cli core update-index
           arduino-cli core install esp32:esp32
-          arduino-cli lib install --git-url https://github.com/firmngin/Firmngin-Arduino.git
+          mkdir -p "$HOME/Arduino/libraries"
+          git clone --depth 1 https://github.com/firmngin/Firmngin-Arduino.git "$HOME/Arduino/libraries/Firmngin-Arduino"
 
       - uses: firmngin/ota@v1.1
         with:
